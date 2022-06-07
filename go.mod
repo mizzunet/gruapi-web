@@ -1,4 +1,4 @@
-module kzbd
+module gruapi-web
 
 go 1.18
 
