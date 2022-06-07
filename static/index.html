@@ -1,0 +1,45 @@
+<h1 id="goodreads-unofficial-api">Goodreads Unofficial API</h1>
+<h4 id="list-items">List items:</h4>
+<h5 id="action-search">Action: <em>search</em></h5>
+<h5 id="parametres">Parametres:</h5>
+<p><code>q</code>: Search terms</p>
+<p><code>filter</code>: Can be 0, 1, 2, 3 represents all, title, author,
+genre respectively</p>
+<h5 id="example-searchqtestfilter0count20">Example: <a
+href="/search?q=test&amp;filter=0&amp;count=20">/search?q=test&amp;filter=0&amp;count=20</a></h5>
+<h5 id="output-sample">Output Sample:</h5>
+<pre class="{"><code>[
+        &quot;title&quot;: &quot;Get a Life, Chloe Brown (The Brown Sisters, #1)&quot;,
+        &quot;cover&quot;: &quot;https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1614273529i/43884209._SY75_.jpg&quot;,
+        &quot;authors&quot;: [
+            &quot;Talia Hibbert&quot;
+        ],
+        &quot;pages&quot;: 0,
+        &quot;published&quot;: 0,
+        &quot;isbn&quot;: 0,
+        &quot;rating&quot;: 0,
+        &quot;link&quot;: &quot;https://www.goodreads.com/book/show/43884209-get-a-life-chloe-brown?from_search=true\u0026from_srp=true\u0026qid=pTGlsZdP2O\u0026rank=19&quot;
+    },
+...
+]</code></pre>
+<h4 id="get-single-book-data">Get single book data:</h4>
+<h5 id="action-view">Action: <em>view</em></h5>
+<h5 id="parametres-1">Parametres:</h5>
+<p><code>link</code>: Goodreads book URL</p>
+<h5
+id="example-viewlinkhttpswww.goodreads.combookshow231804.the_outsiders">Example:
+<a
+href="/view?link=https://www.goodreads.com/book/show/231804.The_Outsiders">/view?link=https://www.goodreads.com/book/show/231804.The_Outsiders</a></h5>
+<h5 id="output-sample-1">Output Sample:</h5>
+<pre><code>{
+    &quot;title&quot;: &quot;The Outsiders&quot;,
+    &quot;cover&quot;: &quot;https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442129426l/231804.jpg&quot;,
+    &quot;authors&quot;: [
+        &quot;S.E. Hinton&quot;
+    ],
+    &quot;pages&quot;: 192,
+    &quot;published&quot;: 1997,
+    &quot;isbn&quot;: 0,
+    &quot;rating&quot;: 4.11,
+    &quot;link&quot;: &quot;https://www.goodreads.com/book/show/231804.The_Outsiders&quot;
+}</code></pre>
