@@ -1,4 +1,4 @@
-module goodreads-api
+module gruapi
 
 go 1.18
 

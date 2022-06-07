@@ -5,7 +5,7 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
-	gd "goodreads-api"
+	gd "gruapi"
 )
 
 func main() {

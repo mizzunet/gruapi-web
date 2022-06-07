@@ -1,4 +1,4 @@
-package goodreadsapi
+package gruapi
 
 import (
 	"fmt"

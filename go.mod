@@ -2,17 +2,11 @@ module kzbd
 
 go 1.18
 
-replace book => ./book/
-
-replace stock => ./stock/
-
-replace goodreads-api => ./goodreads-api/
+replace gruapi => ./gruapi/
 
 require (
-	book v0.0.0-00010101000000-000000000000
 	github.com/gin-gonic/gin v1.7.7
-	goodreads-api v0.0.0-00010101000000-000000000000
-	stock v0.0.0-00010101000000-000000000000
+	gruapi v0.0.0-00010101000000-000000000000
 )
 
 require (
@@ -29,7 +23,6 @@ require (
 	github.com/gocolly/colly/v2 v2.1.0 // indirect
 	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e // indirect
 	github.com/golang/protobuf v1.4.2 // indirect
-	github.com/headzoo/surf v1.0.1 // indirect
 	github.com/json-iterator/go v1.1.9 // indirect
 	github.com/kennygrant/sanitize v1.2.4 // indirect
 	github.com/leodido/go-urn v1.2.0 // indirect
@@ -45,6 +38,5 @@ require (
 	golang.org/x/text v0.3.6 // indirect
 	google.golang.org/appengine v1.6.6 // indirect
 	google.golang.org/protobuf v1.24.0 // indirect
-	gopkg.in/headzoo/surf.v1 v1.0.1 // indirect
 	gopkg.in/yaml.v2 v2.2.8 // indirect
 )
