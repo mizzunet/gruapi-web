@@ -76,6 +76,7 @@ func Search(q string, filter int, count int) []Book {
 	var Books []Book
 	var URL string
 
+	q = strings.ReplaceAll(q, " ", "+")
 	URL = baseURL(&filter) + q
 
 	c := colly.NewCollector(

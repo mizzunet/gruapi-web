@@ -23,6 +23,7 @@ func main() {
 	r.StaticFile("/style.css", "./static/style.css")
 
 	r.Run()
+	gin.SetMode(gin.ReleaseMode)
 }
 
 func gruapi_search(c *gin.Context) {
