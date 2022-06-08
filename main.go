@@ -19,8 +19,8 @@ func main() {
 	r.GET("/search", gruapi_search)
 	r.GET("/view", gruapi_view)
 
-	r.StaticFile("/favicon.ico", "./favicon.ico")
-	r.StaticFile("/style.css", "./style.css")
+	r.StaticFile("/favicon.ico", "./static/favicon.ico")
+	r.StaticFile("/style.css", "./static/style.css")
 
 	r.Run()
 }

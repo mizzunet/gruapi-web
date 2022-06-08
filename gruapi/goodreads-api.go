@@ -2,7 +2,9 @@ package gruapi
 
 import (
 	"fmt"
-	"net/url"
+	"net/http"
+	"time"
+	// "net/url"
 	"strconv"
 	"strings"
 
@@ -34,6 +36,22 @@ func View(URL string) Book {
 	c := colly.NewCollector(
 		colly.CacheDir("cache"),
 	)
+	t := time.Date(2029, time.November, 10, 23, 0, 0, 0, time.UTC)
+
+	cookie := []*http.Cookie{
+		{
+			Name:    "mobvious.device_type",
+			Value:   "mobile",
+			Domain:  "www.goodreads.com",
+			Path:    "/",
+			Expires: t,
+		},
+	}
+	c.SetCookies("www.goodreads.com", cookie)
+
+	c.OnHTML("footer", func(e *colly.HTMLElement) {
+		fmt.Println(e.DOM.Html())
+	})
 	c.OnRequest(func(r *colly.Request) {
 		fmt.Println("Visiting", r.URL)
 	})
@@ -63,12 +81,7 @@ func Search(q string, filter int, data int, count int) []Book {
 	var URL string
 
 	// q := plussify(&query)
-	if isValidUrl(q) == true {
-		URL = q
-
-	} else {
-		URL = baseURL(&filter) + q
-	}
+	URL = baseURL(&filter) + q
 
 	c := colly.NewCollector(
 		colly.CacheDir("cache"),
@@ -157,16 +170,16 @@ func baseURL(filter *int) string {
 	}
 }
 
-func isValidUrl(toTest string) bool {
-	_, err := url.ParseRequestURI(toTest)
-	if err != nil {
-		return false
-	}
+// func isValidUrl(toTest string) bool {
+// 	_, err := url.ParseRequestURI(toTest)
+// 	if err != nil {
+// 		return false
+// 	}
 
-	u, err := url.Parse(toTest)
-	if err != nil || u.Scheme == "" || u.Host == "" {
-		return false
-	}
+// 	u, err := url.Parse(toTest)
+// 	if err != nil || u.Scheme == "" || u.Host == "" {
+// 		return false
+// 	}
 
-	return true
-}
+// 	return true
+// }
