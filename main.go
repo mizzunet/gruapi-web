@@ -32,9 +32,8 @@ func gruapi_search(c *gin.Context) {
 		c.String(200, "Search for something")
 	} else {
 		Filter, _ := strconv.Atoi(c.Query("filter"))
-		Data, _ := strconv.Atoi(c.Query("data"))
 		Count, _ := strconv.Atoi(c.Query("count"))
-		BooksJSON := gd.Search(Query, Filter, Data, Count)
+		BooksJSON := gd.Search(Query, Filter, Count)
 		c.JSONP(200, BooksJSON)
 	}
 }
